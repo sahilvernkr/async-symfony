@@ -14,6 +14,6 @@ class PurchaseConfirmationNotificationHandler
         echo "creating a PDF contract note...<br>";
         
         // 2. Email the contract note to the buyer 
-        echo "Emailing contract note to" . $notification->getOrder()->getBuyer()->getEmail() . '<br>';
+        echo "Emailing contract note to " . $notification->getOrder()->getBuyer()->getEmail() . '<br>';
     }
 }

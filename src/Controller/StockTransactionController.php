@@ -31,6 +31,6 @@ class StockTransactionController extends AbstractController
         $bus->dispatch(new PurchaseConfirmationNotification($order));
 
         //display confirmation to user
-        
+        return $this->render('stocks/example.html.twig');
     }
 }
