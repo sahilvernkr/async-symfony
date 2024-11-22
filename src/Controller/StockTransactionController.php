@@ -18,6 +18,11 @@ class StockTransactionController extends AbstractController
             public function getBuyer(): object
             {
                 return new class {
+                    public function getId(): int
+                    {
+                        return 1;
+                    }
+
                     public function getEmail(): string
                     {
                         return 'sahil@test.com';
