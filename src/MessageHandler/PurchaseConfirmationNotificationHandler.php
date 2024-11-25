@@ -6,6 +6,7 @@ use App\Message\PurchaseConfirmationNotification;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Mime\Email;
+use vendor\mpdf\mpdf\mPDF;
 
 #[AsMessageHandler]
 class PurchaseConfirmationNotificationHandler
@@ -19,7 +20,7 @@ class PurchaseConfirmationNotificationHandler
     {
         // 1. create a PDF contract note
         echo "creating a PDF contract note...<br>";
-
+     //   new mPDF();
         $email = (new Email())
             ->from('sales@stickapp.com')
             ->to($notification->getOrder()->getBuyer()->getEmail())
