@@ -15,13 +15,16 @@ class StockTransactionController extends AbstractController
     {
         //$notification->getOrder()->getBuyer()->getEmail()
         $order = new class{
-            public function getBuyer(): object
+
+            public function getId(): int
             {
+                return 1;
+            }
+            
+            public function getBuyer(): object
+            {   
                 return new class {
-                    public function getId(): int
-                    {
-                        return 1;
-                    }
+                   
 
                     public function getEmail(): string
                     {
@@ -33,7 +36,7 @@ class StockTransactionController extends AbstractController
 
 
         //dispatch confimation message
-        $bus->dispatch(new PurchaseConfirmationNotification($order));
+        $bus->dispatch(new PurchaseConfirmationNotification($order->getId()));
 
         //display confirmation to user
         return $this->render('stocks/example.html.twig');
