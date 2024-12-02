@@ -4,10 +4,7 @@ namespace App\Message;
 
 class PurchaseConfirmationNotification
 {
-    public function __construct(private int|string $orderId)
-    {
-        
-    }
+    public function __construct(private int|string $orderId) {}
 
     /**
      * Get the value of order

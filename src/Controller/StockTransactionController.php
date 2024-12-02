@@ -14,17 +14,17 @@ class StockTransactionController extends AbstractController
     public function buy(MessageBusInterface $bus)
     {
         //$notification->getOrder()->getBuyer()->getEmail()
-        $order = new class{
+        $order = new class {
 
             public function getId(): int
             {
                 return 1;
             }
-            
+
             public function getBuyer(): object
-            {   
+            {
                 return new class {
-                   
+
 
                     public function getEmail(): string
                     {
