@@ -7,3 +7,5 @@ For testing of mails
 - symfony serve -d
 - symfony open:local:webmail
 - http://127.0.0.1:8000/buy
+- docker ps (to know the port)
+- symfony console messenger:consume async -vv
