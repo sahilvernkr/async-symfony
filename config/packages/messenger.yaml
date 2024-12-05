@@ -1,7 +1,7 @@
 framework:
     messenger:
         # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
-        # failure_transport: failed
+        failure_transport: failed
         default_bus: command.bus
 
         buses:
@@ -18,9 +18,10 @@ framework:
                     delay: 1000
                     multiplier: 2
                     max_delay: 0
-
-            # failed: 'doctrine://default?queue_name=failed'
+            
              sync: 'sync://'
+             failed: 'doctrine://default?queue_name=failed'
+             
 
         routing:
             # Route your messages to the transports
