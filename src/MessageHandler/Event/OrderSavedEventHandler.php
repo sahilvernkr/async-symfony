@@ -3,9 +3,9 @@
 namespace App\MessageHandler\Event;
 
 use Mpdf\Mpdf;
+use RuntimeException;
 use Symfony\Component\Mime\Email;
 use App\Message\Event\OrderSavedEvent;
-use RuntimeException;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
@@ -15,7 +15,7 @@ class OrderSavedEventHandler
     public function __construct(private MailerInterface $mailer) {}
 
     public function __invoke(OrderSavedEvent $event)
-    {   
+    {
         //attempt to retrieve an order from MongoDB
         throw new RuntimeException('ORDER COULD NOT BE FOUND');
 
