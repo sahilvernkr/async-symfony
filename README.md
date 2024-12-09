@@ -9,3 +9,6 @@ For testing of mails
 - http://127.0.0.1:8000/buy
 - docker ps (to know the port)
 - symfony console messenger:consume async -vv
+- symfony console messenger:failed:show
+- symfony console messenger:failed:show 22 --transport=failed -vv
+you can retry or delete message on the failure transport
